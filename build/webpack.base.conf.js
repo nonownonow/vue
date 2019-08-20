@@ -5,7 +5,6 @@ const DotenvWebpackPlugin = require('dotenv-webpack')
 const getAbsolutePathFromCwd = (dirname = '.') => path.resolve(process.cwd(), dirname)
 
 module.exports = {
-  mode: 'production',
   context: getAbsolutePathFromCwd(),
   entry: {
     app: './src/index.js',

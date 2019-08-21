@@ -2,8 +2,7 @@ const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const DotenvWebpackPlugin = require('dotenv-webpack')
-const getAbsolutePathFromCwd = (dirname = '.') => path.resolve(process.cwd(),
-  dirname)
+const { assetsPath, getAbsolutePathFromCwd } = require('./utils')
 
 module.exports = {
   context: getAbsolutePathFromCwd(),
@@ -27,12 +26,41 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.js$/,
+        loader: 'babel-loader',
+        include: [getAbsolutePathFromCwd('src'), getAbsolutePathFromCwd('node_modules/webpack-dev-server/client')]
+      },
+      {
         test: /\.scss$/,
         use: [
           'style-loader',
           'css-loader',
           'sass-loader'
         ]
+      },
+      {
+        test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
+        loader: 'url-loader',
+        options: {
+          limit: 10000,
+          name: assetsPath('img/[name].[hash:7].[ext]')
+        }
+      },
+      {
+        test: /\.(mp4|webm|ogg|mp3|wav|flac|aac)(\?.*)?$/,
+        loader: 'url-loader',
+        options: {
+          limit: 10000,
+          name: assetsPath('media/[name].[hash:7].[ext]')
+        }
+      },
+      {
+        test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
+        loader: 'url-loader',
+        options: {
+          limit: 10000,
+          name: assetsPath('fonts/[name].[hash:7].[ext]')
+        }
       }
     ]
   },
@@ -47,7 +75,7 @@ module.exports = {
     new CleanWebpackPlugin()
   ],
   output: {
-    path: path.resolve(__dirname, '../dist'),
+    path: getAbsolutePathFromCwd('dist'),
     filename: '[name].bundle.js',
     publicPath: '/'
   }

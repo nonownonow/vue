@@ -1,0 +1,254 @@
+$mid_color: #29b6f6;
+$color_1: #fff;
+$color_2: #f2f2f2;
+$controller_text_color: #ffffff;
+$color_3: #333;
+$color_4: #999;
+body.got-style {
+  background-color: $color_2;
+}
+
+.got-style {
+  //player
+  #player-wrap {
+    .player-head {
+      background-color: $mid_color;
+      background-image: url('../images/mid/bg-mid-head.jpg');
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      .player-title {
+        color: $color_3;
+        .title:before{
+          background: url("../../../images/logo_gooroome.svg") no-repeat 0 0;
+        }
+      }
+      .player-list {
+        ul li .video-area .dim-memo-icon .icons button {
+          background: #fff;
+          color: $mid_color;
+          &:hover,
+          &.active {
+            background: $mid_color;
+            color: #fff;
+          }
+        }
+        .pop-memo-input {
+          background: $mid_color;
+          .area-memo-header {
+            .title {
+              color: $color_3;
+            }
+            .name {
+              color: $color_3;
+            }
+            .time {
+              color: $color_3;
+            }
+          }
+          .area-memo-body .group-input {
+            border-bottom: 1px solid $color_3;
+            input {
+              color: $color_3;
+            }
+          }
+        }
+      }
+      .stopwatch-area {
+        .title,
+        .second {
+          color: $color_3;
+        }
+        .time-setting {
+          .btn-time-start {
+            border-color: $color_3;
+            color: $color_3;
+          }
+        }
+        .time-tutor {
+          .btn-time-stop {
+            border-color: $color_3;
+            color: $color_3;
+          }
+        }
+      }
+    }
+    .player-container {
+      background: $color_2;
+      .content-board {
+        .area-tool {
+          li:hover {
+            >button {
+              background: $mid_color;
+            }
+          }
+        }
+      }
+    }
+  } //tutor
+  #player-wrap .controller-tutor {
+    button {
+      background: rgba(255, 255, 255, 0.9);
+      color: $mid_color;
+      &:hover {
+        background: $mid_color;
+        color: $color_1;
+      }
+      span {
+        color: $controller_text_color;
+        background: $mid_color;
+      }
+    }
+  } //left-munu
+  .navbar-static-side {
+    border: 1px solid $color_4;
+    .chat-header {
+      h3 {
+        color: $color_3;
+        a {
+          color: #c1c1c1;
+        }
+      }
+    }
+    .chat-all-controller {
+      border-bottom: 1px solid #999;
+      .title {
+        color: $color_3;
+      }
+      .btn-all-control {
+        color: #c1c1c1;
+        button[class^="icon-"] {}
+      }
+    }
+    .chat-body {
+      .area-chat {
+        .cont {
+          .name {
+            color: $color_3;
+          }
+          .bubble {
+            background-color: #dadada;
+          }
+        }
+        &.me {
+          .cont {
+            .bubble {
+              background: $mid_color;
+            }
+          }
+        }
+        &.whisper {
+          .cont {
+            .bubble {
+              background: transparent;
+              border: 1px solid $mid_color;
+            }
+            .name {
+              span {
+                color: $color_4;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .left-menu {
+    .chat-footer {
+      border: 1px solid $color_2;
+      background: $color_2;
+      .btn-group.sheet {
+        .dropdown-menu {
+          background: $mid_color;
+          color: $color_3;
+        }
+        .dropdown-toggle {
+          border-color: $color_3;
+          background: $color_2;
+          color: $color_3;
+        }
+      }
+      .chat-input {
+        border-color: $color_3;
+        input {
+          color: $color_3;
+        }
+        a {
+          color: #b8b8b8;
+        }
+      }
+      button.btn-chat-open {
+        color: $color_4;
+      }
+    }
+  }
+  .scrollbar-default::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+    background-color: $color_1;
+    border-radius: 10px;
+  }
+  .scrollbar-default::-webkit-scrollbar {
+    width: 7px;
+    background-color: $color_1;
+  }
+  .scrollbar-default::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+    background-color: $mid_color;
+  }
+  .left-menu {
+    .controller-user.dark {
+      button {
+        background: #fff;
+        color: $mid_color;
+        &:hover {
+          background: $mid_color;
+          color: #fff;
+        }
+        &.active {
+          background: $mid_color;
+          color: #fff;
+        }
+      }
+    }
+  }
+}
+
+.got-style.mini-navbar {
+  .left-menu {
+    .chat-footer {
+      border: 1px solid $color_4;
+    }
+  }
+}
+
+//intro
+.section-intro {
+  &.theme01 {
+    background-image: url('../images/intro/kids/bg-intro-01.jpg');
+  }
+  &.theme02 {
+    background-image: url('../images/intro/kids/bg-intro-02.jpg');
+  }
+  &.theme03 {
+    background-image: url('../images/intro/kids/bg-intro-03.jpg');
+  }
+  &.theme04 {
+    background-image: url('../images/intro/kids/bg-intro-04.jpg');
+  }
+  &.theme05 {
+    background-image: url('../images/intro/kids/bg-intro-05.jpg');
+  }
+  &.theme06 {
+    background-image: url('../images/intro/kids/bg-intro-06.jpg');
+  }
+  &.theme07 {
+    background-image: url('../images/intro/kids/bg-intro-07.jpg');
+  }
+  &.theme08 {
+    background-image: url('../images/intro/kids/bg-intro-08.jpg');
+  }
+  &.theme09 {
+    background-image: url('../images/intro/kids/bg-intro-09.jpg');
+  }
+}

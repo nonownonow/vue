@@ -2,7 +2,8 @@ const merge = require('webpack-merge')
 const webpack = require('webpack')
 const webpackBaseConfig = require('./webpack.base.conf')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-
+const TerserJSPlugin = require('terser-webpack-plugin');
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 // const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { styleLoaders, getAbsolutePathFromCwd, assetsPath } = require('./utils')
@@ -21,6 +22,9 @@ module.exports = merge(webpackBaseConfig, {
     path: getAbsolutePathFromCwd('dist'),
     filename: assetsPath('js/[name].js'),
     chunkFilename: assetsPath('js/[id].js')
+  },
+  optimization: {
+    minimizer: [new TerserJSPlugin({}), new OptimizeCSSAssetsPlugin({})],
   },
   plugins: [
     new MiniCssExtractPlugin({

@@ -12,7 +12,9 @@
   },
   "dependencies": {
     "express": "^4.17.1",
-    "fxjs2": "^0.12.1"
+    "font-awesome": "^4.7.0",
+    "fxjs2": "^0.12.1",
+    "terser-webpack-plugin": "^1.4.1"
   },
   "devDependencies": {
     "@babel/core": "^7.5.5",

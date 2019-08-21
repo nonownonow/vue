@@ -7,8 +7,7 @@ const { assetsPath, getAbsolutePathFromCwd } = require('./utils')
 module.exports = {
   context: getAbsolutePathFromCwd(),
   entry: {
-    app: './src/index.js',
-    print: './src/print.js'
+    app: './src/index.js'
   },
   node: {
     // prevent webpack from injecting mocks to Node native modules
@@ -65,12 +64,6 @@ module.exports = {
     ]
   },
   plugins: [
-    new HtmlWebpackPlugin(
-      {
-        title: 'got-player-v2',
-        template: './index.html'
-      }
-    ),
     new DotenvWebpackPlugin(),
     new CleanWebpackPlugin()
   ],

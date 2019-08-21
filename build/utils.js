@@ -1,5 +1,5 @@
 const path = require('path')
-const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 const getAbsolutePathFromCwd = (dirname = '.') => path.resolve(process.cwd(), dirname)
 
@@ -38,10 +38,20 @@ function cssLoaders (options = {}) {
     // Extract CSS when that option is specified
     // (which is the case during production build)
     if (options.extract) {
-      return ExtractTextPlugin.extract({
-        use: loaders,
-        fallback: 'style-loader'
-      })
+      // return ExtractTextPlugin.extract({
+      //   use: loaders,
+      //   fallback: 'style-loader'
+      // })
+      return [
+        {
+          loader: MiniCssExtractPlugin.loader,
+          options: {
+            // you can specify a publicPath here
+            // by default it uses publicPath in webpackOptions.output
+            hmr: process.env.NODE_ENV === 'development'
+          }
+        }
+      ].concat(loaders)
     } else {
       return ['style-loader'].concat(loaders)
     }
@@ -56,7 +66,7 @@ function cssLoaders (options = {}) {
 
 function styleLoaders (options) {
   const output = []
-  const loaders = exports.cssLoaders(options)
+  const loaders = cssLoaders(options)
 
   for (const extension in loaders) {
     const loader = loaders[extension]

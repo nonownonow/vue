@@ -1,5 +1,6 @@
 import { join } from 'fxjs2'
 import print from './print'
+console.log('NODE_ENV', process.env.NODE_ENV)
 function component () {
   const element = document.getElementById('app')
   const button = document.createElement('button')

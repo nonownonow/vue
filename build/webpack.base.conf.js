@@ -7,8 +7,7 @@ const getAbsolutePathFromCwd = (dirname = '.') => path.resolve(process.cwd(), di
 module.exports = {
   context: getAbsolutePathFromCwd(),
   entry: {
-    app: './src/index.js',
-    print: './src/print.js'
+    app: './src/index.js'
   },
   node: {
     // prevent webpack from injecting mocks to Node native modules
@@ -34,7 +33,7 @@ module.exports = {
     new CleanWebpackPlugin()
   ],
   output: {
-    path: path.resolve(__dirname, '../dist'),
+    path: getAbsolutePathFromCwd('dist'),
     filename: '[name].bundle.js',
     publicPath: '/'
   }

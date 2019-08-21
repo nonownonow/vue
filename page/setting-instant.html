@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html ng-app="inspinia">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <title page-title></title>
+  <script src="../src/index.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+  <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+  <!-- layout : 초기설정 -->
+  <!-- N: 테스트 단계별로 .step00의 숫자를 바꾸면 해당하는 스타일이 적용됨, step00:안내문, step01:스피커설정, step02:마이크설정, step03:카메라설정  -->
+  <div class="section-setting got-style step00 setting-test">
+    <h1 class="logo-tutor icon-bi_h">
+      <span class="hidden-txt">TUTOR.COM</span>
+    </h1>
+    <div class="inner">
+
+      <div class="setting-header check">
+        <h2 class="hidden-txt">초기설정 안내문</h2>
+        <span class="mark"></span>
+        <h3 class="title">수업에 참여하기 전에 카메라와 스피커, 마이크가
+          <br> 제대로 작동하는지 꼭 확인해주세요</h3>
+      </div>
+      <div class="setting-body check">
+        <ul class="check-list">
+          <li>
+            <span class="img-bx"></span>
+            <p>튜터닷컴을 제외한
+              <strong>다른 인터넷 창이나 프로그램은 종료</strong>해주세요.</p>
+          </li>
+          <li>
+            <span class="img-bx"></span>
+            <p>
+              <strong>헤드셋과 웹캠이 컴퓨터에 잘 연결</strong>되어 있는지 확인해주세요.
+              <br> 웹캠은 모니터의 정면에 위치하게 설정해주세요.</p>
+          </li>
+          <li>
+            <span class="img-bx"></span>
+            <p>
+              <strong>전원 및 LAN선이 컴퓨터에 잘 연결</strong>되어 있는지 확인해주세요.
+              <br> 와이파이(Wifi) 연결 시 이용이 원활하지 않을 수 있습니다.</p>
+          </li>
+        </ul>
+        <div class="area-btn">
+          <button type="button" class="btn btn-basic btn-lg">
+            <span>테스트 시작</span>
+          </button>
+        </div>
+      </div>
+      <!-- //layout : 초기설정 안내문 -->
+
+      <div class="setting-header">
+        <h2 class="hidden-txt">초기설정</h2>
+        <div class="area-step">
+          <div class="progress">
+            <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="35" role="progressbar" class="progress-bar">
+              <span class="sr-only">0% Complete (success)</span>
+            </div>
+          </div>
+          <ol class="step">
+            <li>
+              <span>1</span>스피커 테스트</li>
+            <li>
+              <span>2</span>마이크 테스트</li>
+            <li>
+              <span>3</span>카메라 테스트</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="setting-body speaker">
+        <h3 class="hidden-txt">스피커 테스트</h3>
+        <h4>지금 들리고 있는 동물을 선택해주세요.</h4>
+        <div class="area-select">
+          <strong>스피커 선택</strong>
+          <div class="btn-group">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+              기본값 (내장 출력)
+              <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" role="menu">
+              <li>
+                <a href="#">Apple Airpod</a>
+              </li>
+              <li>
+                <a href="#">외부 마이크 1</a>
+              </li>
+              <li>
+                <a href="#">외부 마이크 2</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <ul class="area-test">
+          <li>
+            <label for="rdo-sheep" class="label-sheep"></label>
+            <input type="radio" id="rdo-sheep" name="radio">
+          </li>
+          <li>
+            <label for="rdo-chicken" class="label-chicken"></label>
+            <input type="radio" id="rdo-chicken" name="radio">
+          </li>
+          <li>
+            <label for="rdo-cat" class="label-cat"></label>
+            <input type="radio" id="rdo-cat" name="radio">
+          </li>
+        </ul>
+        <div class="area-btn">
+          <button type="button" class="btn btn-basic">
+            <span>다음</span>
+          </button>
+          <a href="#" class="btn-none">
+            <span class="icon-check"></span>스피커가 없어요.</a>
+          <a href="https://kr.tutor.com/help/faqs?q=player" target="_blank" class="btn-solution">소리가 들리지 않는다면 ?
+            <strong>해결하기</strong>
+          </a>
+        </div>
+        <!-- popup: 맞췄을 경우 -->
+        <!-- <div class="popup-toast primary">
+                    <p>맞췄습니다.</p>
+              </div> -->
+        <!-- popup: 못 맞췄을 경우 -->
+        <!-- <div class="popup-toast care">
+                    <p>잘 안들리나요? 다시 한 번 도전!</p>
+              </div> -->
+      </div>
+      <!-- //layout : 스피커 테스트 -->
+
+      <div class="setting-body mic">
+        <h3 class="hidden-txt">마이크 테스트</h3>
+        <h4>마이크 테스트를 위해 목소리를 내보세요.</h4>
+        <div class="area-select">
+          <strong>마이크 선택</strong>
+          <div class="btn-group">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+              기본값 (내장 마이크)
+              <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" role="menu">
+              <li>
+                <a href="#">Apple Airpod</a>
+              </li>
+              <li>
+                <a href="#">외부 마이크 1</a>
+              </li>
+              <li>
+                <a href="#">외부 마이크 2</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="area-test">
+          <div class="progress progress-striped active">
+            <!-- N: 볼륨에 따라 progress-bar width값이 변화됨. -->
+            <div style="width: 60%;" aria-valuemax="100" aria-valuemin="0" aria-valuenow="35" role="progressbar" class="progress-bar b-r-xl">
+              <span class="sr-only">60% Complete (success)</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>여기까지 목소리를 내보세요.</span>
+          </div>
+        </div>
+        <div class="area-btn">
+          <button type="button" class="btn btn-basic">
+            <span>다음</span>
+          </button>
+          <a href="#" class="btn-none">
+            <span class="icon-check"></span>마이크가 없어요.</a>
+          <a href="https://kr.tutor.com/help/faqs?q=player" target="_blank" class="btn-solution">게이지가 움직이지 않는다면 ?
+            <strong>해결하기</strong>
+          </a>
+        </div>
+      </div>
+      <!-- //layout : 마이크 테스트 -->
+
+      <div class="setting-body camera">
+        <h3 class="hidden-txt">카메라 테스트</h3>
+        <h4>내 모습이 잘 보이는지 확인하세요.</h4>
+        <div class="area-select">
+          <strong>카메라 설정</strong>
+          <div class="btn-group">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+              Face Time HD Camera
+              <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" role="menu">
+              <li>
+                <a href="#">Apple Airpod</a>
+              </li>
+              <li>
+                <a href="#">외부 마이크 1</a>
+              </li>
+              <li>
+                <a href="#">외부 마이크 2</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="area-test">
+          <!-- layout : 캠화면 보이는 영역 -->
+          <div class="view">
+            <span>카메라 없음</span>
+          </div>
+          <!-- layout : 캠화면 보이는 영역 -->
+        </div>
+        <div class="area-btn">
+          <button type="button" class="btn btn-basic btn-lg">
+            <span>수업 입장</span>
+          </button>
+          <a href="https://kr.tutor.com/help/faqs?q=player" target="_blank" class="btn-solution">내 얼굴이 화면에 보이지 않는다면 ?
+            <strong>해결하기</strong>
+          </a>
+        </div>
+      </div>
+      <!-- //layout : 카메라 테스트 -->
+
+      <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#pop-speaker-none">
+        스피커없을경우 팝업
+      </button> -->
+      <!-- //layout : 스피커없을 경우 팝업 버튼 -->
+
+      <div class="modal fade got-style" id="pop-speaker-none" tabindex="-1" role="dialog" aria-labelledby="pop-speaker-none" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-alert" role="document">
+          <div class="modal-content">
+            <div class="modal-body">
+              <div class="info">
+                <p>연결된 스피커가 없는 경우, 수업이 원활하지 않습니다.
+                  <br>그래도 참여하시겠습니까?</p>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" data-dismiss="modal" class="btn cancel">아니오</button>
+              <button type="button" class="btn submit">네, 참여하겠습니다</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- //layout : 스피커없을 경우 팝업 -->
+
+      <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#pop-basic-setting">
+        기본설정 팝업
+      </button> -->
+      <!-- layout : //기본설정 팝업 버튼 -->
+
+      <div class="modal fade got-style pop-basic-setting" id="pop-basic-setting" tabindex="-1" role="dialog" aria-labelledby="pop-basic-setting"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-setting" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">설정</h5>
+              <button class="icon-bx-flat btn-close close" data-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div class="area-test">
+                <!-- layout : 캠화면 보이는 영역 -->
+                <div class="view">
+                  <span class="icon-tool-shot"></span>
+                </div>
+                <!-- layout : 캠화면 보이는 영역 -->
+                <p>문제가 발생하면 브라우저를 다시 시작하세요</p>
+              </div>
+              <div class="area-select">
+                <strong>카메라 설정</strong>
+                <div class="btn-group">
+                  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                    Face Time HD Camera
+                    <span class="caret"></span>
+                  </button>
+                  <ul class="dropdown-menu" role="menu">
+                    <li>
+                      <a href="#">Apple Airpod</a>
+                    </li>
+                    <li>
+                      <a href="#">외부 마이크 1</a>
+                    </li>
+                    <li>
+                      <a href="#">외부 마이크 2</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="area-select">
+                <strong>마이크 선택</strong>
+                <div class="btn-group">
+                  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                    기본값 (내장 마이크)
+                    <span class="caret"></span>
+                  </button>
+                  <ul class="dropdown-menu" role="menu">
+                    <li>
+                      <a href="#">Apple Airpod</a>
+                    </li>
+                    <li>
+                      <a href="#">외부 마이크 1</a>
+                    </li>
+                    <li>
+                      <a href="#">외부 마이크 2</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="area-select">
+                <strong>스피커 선택</strong>
+                <div class="btn-group">
+                  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                    기본값 (내장 출력)
+                    <span class="caret"></span>
+                  </button>
+                  <ul class="dropdown-menu" role="menu">
+                    <li>
+                      <a href="#">Apple Airpod</a>
+                    </li>
+                    <li>
+                      <a href="#">외부 마이크 1</a>
+                    </li>
+                    <li>
+                      <a href="#">외부 마이크 2</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" data-dismiss="modal" class="btn cancel">취소</button>
+              <button type="button" class="btn submit">저장</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- //layout : 기본설정 팝업 -->
+
+    </div>
+  </div>
+
+</body>
+
+</html>

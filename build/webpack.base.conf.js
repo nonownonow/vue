@@ -2,7 +2,8 @@ const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const DotenvWebpackPlugin = require('dotenv-webpack')
-const getAbsolutePathFromCwd = (dirname = '.') => path.resolve(process.cwd(), dirname)
+const getAbsolutePathFromCwd = (dirname = '.') => path.resolve(process.cwd(),
+  dirname)
 
 module.exports = {
   context: getAbsolutePathFromCwd(),
@@ -22,6 +23,18 @@ module.exports = {
   devtool: 'inline-source-map',
   devServer: {
     contentBase: getAbsolutePathFromCwd('dist')
+  },
+  module: {
+    rules: [
+      {
+        test: /\.scss$/,
+        use: [
+          'style-loader',
+          'css-loader',
+          'sass-loader'
+        ]
+      }
+    ]
   },
   plugins: [
     new HtmlWebpackPlugin(

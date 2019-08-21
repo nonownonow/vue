@@ -1,5 +1,6 @@
 import { join } from 'fxjs2'
 import print from './print'
+import './test.scss'
 function component () {
   const element = document.getElementById('app')
   const button = document.createElement('button')

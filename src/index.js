@@ -1,15 +1,11 @@
-import { join } from 'fxjs2'
-import print from './print'
-function component () {
-  const element = document.getElementById('app')
-  const button = document.createElement('button')
-  button.innerText = 'Click'
-  button.addEventListener('click', e => {
-    print()
-  })
-  element.innerText = join(' ', ['hello', 'webpack'])
-  element.appendChild(button)
-  return element
-}
+// js import
+// import '../assets/javascripts/pub.js'
 
-document.body.replaceWith(component())
+// css import
+import 'font-awesome/css/font-awesome.css'
+import '../assets/stylesheets/animate/animate.css'
+import '../assets/stylesheets/theme/style.scss'
+import '../assets/stylesheets/theme/base/ui-guide.scss'
+import '../assets/stylesheets/theme/base/setting.scss'
+import '../assets/stylesheets/theme/base/popup.scss'
+import '../assets/stylesheets/theme/base/player.scss'

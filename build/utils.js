@@ -38,10 +38,6 @@ function cssLoaders (options = {}) {
     // Extract CSS when that option is specified
     // (which is the case during production build)
     if (options.extract) {
-      // return ExtractTextPlugin.extract({
-      //   use: loaders,
-      //   fallback: 'style-loader'
-      // })
       return [
         {
           loader: MiniCssExtractPlugin.loader,

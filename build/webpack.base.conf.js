@@ -1,5 +1,3 @@
-const path = require('path')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const DotenvWebpackPlugin = require('dotenv-webpack')
 const { assetsPath, getAbsolutePathFromCwd } = require('./utils')
@@ -30,14 +28,6 @@ module.exports = {
         include: [getAbsolutePathFromCwd('src'), getAbsolutePathFromCwd('node_modules/webpack-dev-server/client')]
       },
       {
-        test: /\.scss$/,
-        use: [
-          'style-loader',
-          'css-loader',
-          'sass-loader'
-        ]
-      },
-      {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
         loader: 'url-loader',
         options: {
@@ -64,7 +54,11 @@ module.exports = {
     ]
   },
   plugins: [
-    new DotenvWebpackPlugin(),
+    new DotenvWebpackPlugin(
+      {
+        path: getAbsolutePathFromCwd('env/.env')
+      }
+    ),
     new CleanWebpackPlugin()
   ],
   output: {

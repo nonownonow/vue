@@ -2,8 +2,9 @@ const merge = require('webpack-merge')
 const webpack = require('webpack')
 const webpackBaseConfig = require('./webpack.base.conf')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const TerserJSPlugin = require('terser-webpack-plugin');
-const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const TerserJSPlugin = require('terser-webpack-plugin')
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
+// const CopyWebpackPlugin = require('copy-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 // const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { styleLoaders, getAbsolutePathFromCwd, assetsPath } = require('./utils')
@@ -24,7 +25,7 @@ module.exports = merge(webpackBaseConfig, {
     chunkFilename: assetsPath('js/[id].js')
   },
   optimization: {
-    minimizer: [new TerserJSPlugin({}), new OptimizeCSSAssetsPlugin({})],
+    minimizer: [new TerserJSPlugin({}), new OptimizeCSSAssetsPlugin({})]
   },
   plugins: [
     new MiniCssExtractPlugin({
@@ -34,7 +35,7 @@ module.exports = merge(webpackBaseConfig, {
     }),
     new CopyWebpackPlugin([
       {
-        from: getAbsolutePathFromCwd('/static'),
+        from: getAbsolutePathFromCwd('public'),
         to: 'static',
         ignore: ['.*']
       }
@@ -42,7 +43,7 @@ module.exports = merge(webpackBaseConfig, {
     // keep module.id stable when vendor modules does not change
     new webpack.HashedModuleIdsPlugin(),
     // enable scope hoisting
-    new webpack.optimize.ModuleConcatenationPlugin(),
+    new webpack.optimize.ModuleConcatenationPlugin()
     // split vendor js into its own file
   ]
 })

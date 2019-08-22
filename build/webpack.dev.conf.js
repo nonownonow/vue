@@ -1,10 +1,10 @@
 const merge = require('webpack-merge')
-const webpack = require('webpack')
+// const webpack = require('webpack')
 const webpackBaseConfig = require('./webpack.base.conf')
 
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
-const { styleLoaders, getAbsolutePathFromCwd, assetsPath } = require('./utils')
+const { styleLoaders, getAbsolutePathFromCwd } = require('./utils')
 let htmlTemplate
 switch (process.env.BUILD_TYPE) {
   case 'player':
@@ -44,7 +44,7 @@ module.exports = merge(webpackBaseConfig, {
       }
     ])
   ]
-/*  devServer: {
+  /*  devServer: {
     clientLogLevel: 'warning',
     historyApiFallback: {
       rewrites: [

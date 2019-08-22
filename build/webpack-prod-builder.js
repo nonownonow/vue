@@ -21,5 +21,4 @@ webpack(webpackConfig, (err, stats) => {
     process.exit(1)
   }
   console.log(chalk.cyan(' Build complete.\n'))
-  console.log(process.env.NODE_ENV)
 })

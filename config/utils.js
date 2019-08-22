@@ -4,8 +4,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const getAbsolutePathFromCwd = (dirname = '.') => path.resolve(process.cwd(), dirname)
 
 function assetsPath (dir) {
-  // console.log(path.posix.join(process.env.ASSETS_SUB_DIRECTORY, dir))
-  return path.posix.join('static', dir)
+  return path.posix.join(process.env.ASSETS_SUB_DIRECTORY, dir)
 }
 
 function cssLoaders (options = {}) {
@@ -35,15 +34,11 @@ function cssLoaders (options = {}) {
       })
     }
 
-    // Extract CSS when that option is specified
-    // (which is the case during production build)
     if (options.extract) {
       return [
         {
           loader: MiniCssExtractPlugin.loader,
           options: {
-            // you can specify a publicPath here
-            // by default it uses publicPath in webpackOptions.output
             hmr: process.env.NODE_ENV === 'development'
           }
         }

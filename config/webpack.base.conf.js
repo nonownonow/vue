@@ -8,8 +8,6 @@ module.exports = {
     app: './src/index.js'
   },
   node: {
-    // prevent webpack from injecting mocks to Node native modules
-    // that does not make sense for the client
     dgram: 'empty',
     fs: 'empty',
     net: 'empty',
@@ -60,10 +58,5 @@ module.exports = {
       }
     ),
     new CleanWebpackPlugin()
-  ],
-  output: {
-    path: getAbsolutePathFromCwd('dist'),
-    filename: '[name].bundle.js',
-    publicPath: '/'
-  }
+  ]
 }

@@ -4,9 +4,7 @@ const webpackBaseConfig = require('./webpack.base.conf')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const TerserJSPlugin = require('terser-webpack-plugin')
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
-// const CopyWebpackPlugin = require('copy-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
-// const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { styleLoaders, getAbsolutePathFromCwd, assetsPath } = require('./utils')
 
 module.exports = merge(webpackBaseConfig, {
@@ -21,29 +19,27 @@ module.exports = merge(webpackBaseConfig, {
   devtool: '#source-map',
   output: {
     path: getAbsolutePathFromCwd('dist'),
-    filename: assetsPath('js/[name].js'),
-    chunkFilename: assetsPath('js/[id].js')
+    filename: assetsPath('js/[name].[hash].js'),
+    chunkFilename: assetsPath('js/[id].[hash].js'),
+    publicPath: '/'
   },
   optimization: {
     minimizer: [new TerserJSPlugin({}), new OptimizeCSSAssetsPlugin({})]
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: '[name].css',
-      chunkFilename: '[id].css',
-      ignoreOrder: false // Enable to remove warnings about conflicting order
+      filename: '[name].[hash].css',
+      chunkFilename: '[id].[hash].css',
+      ignoreOrder: false
     }),
     new CopyWebpackPlugin([
       {
-        from: getAbsolutePathFromCwd('public'),
-        to: 'static',
+        from: getAbsolutePathFromCwd(process.env.ASSETS_STATIC_DIRECTORY),
+        to: process.env.ASSETS_SUB_DIRECTORY,
         ignore: ['.*']
       }
     ]),
-    // keep module.id stable when vendor modules does not change
     new webpack.HashedModuleIdsPlugin(),
-    // enable scope hoisting
     new webpack.optimize.ModuleConcatenationPlugin()
-    // split vendor js into its own file
   ]
 })

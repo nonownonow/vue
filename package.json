@@ -7,14 +7,14 @@
   "license": "MIT",
   "scripts": {
     "watch": "webpack --watch",
-    "start": "webpack-dev-server --open --config build/webpack.dev.conf.js",
-    "build": "node build/webpack-prod-builder"
+    "build": "NODE_ENV=production dotenv -e env/.env -- node build/webpack-prod-builder",
+    "player": "BUILD_TYPE=player NODE_ENV=development dotenv -e env/.env -- webpack-dev-server --open --config build/webpack.dev.conf.js",
+    "setting": "BUILD_TYPE=setting NODE_ENV=development dotenv -e env/.env -- webpack-dev-server --open --config build/webpack.dev.conf.js",
+    "popattend": "BUILD_TYPE=popattend NODE_ENV=development dotenv -e env/.env -- webpack-dev-server --open --config build/webpack.dev.conf.js"
   },
   "dependencies": {
-    "express": "^4.17.1",
     "font-awesome": "^4.7.0",
-    "fxjs2": "^0.12.1",
-    "terser-webpack-plugin": "^1.4.1"
+    "fxjs2": "^0.12.1"
   },
   "devDependencies": {
     "@babel/core": "^7.5.5",
@@ -30,7 +30,6 @@
     "core-js": "3",
     "css-loader": "^3.2.0",
     "cucumber": "^5.1.0",
-    "dotenv": "^8.1.0",
     "dotenv-cli": "^2.0.1",
     "dotenv-webpack": "^1.7.0",
     "eslint": "^6.2.0",
@@ -48,12 +47,11 @@
     "node-sass": "^4.12.0",
     "optimize-css-assets-webpack-plugin": "^5.0.3",
     "ora": "^3.4.0",
-    "postcss-import": "^12.0.1",
     "postcss-loader": "^3.0.0",
-    "postcss-url": "^8.0.0",
     "sass-loader": "^7.3.1",
     "selenium-webdriver": "^4.0.0-alpha.4",
     "style-loader": "^1.0.0",
+    "terser-webpack-plugin": "^1.4.1",
     "url-loader": "^2.1.0",
     "webpack": "^4.39.2",
     "webpack-cli": "^3.3.7",

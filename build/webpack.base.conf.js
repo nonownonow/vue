@@ -30,14 +30,6 @@ module.exports = {
         include: [getAbsolutePathFromCwd('src'), getAbsolutePathFromCwd('node_modules/webpack-dev-server/client')]
       },
       {
-        test: /\.scss$/,
-        use: [
-          'style-loader',
-          'css-loader',
-          'sass-loader'
-        ]
-      },
-      {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
         loader: 'url-loader',
         options: {
@@ -64,7 +56,11 @@ module.exports = {
     ]
   },
   plugins: [
-    new DotenvWebpackPlugin(),
+    new DotenvWebpackPlugin(
+      {
+        path: getAbsolutePathFromCwd('env/.env')
+      }
+    ),
     new CleanWebpackPlugin()
   ],
   output: {

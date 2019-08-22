@@ -1,11 +1,9 @@
 // const path = require('path')
-require('dotenv').config()
 const webpack = require('webpack')
 const ora = require('ora')
 const chalk = require('chalk')
-// const config = require('../config')
 const webpackConfig = require('./webpack.prod.conf')
-process.env.NODE_ENV = 'production'
+
 const spinner = ora('building for production...')
 spinner.start()
 webpack(webpackConfig, (err, stats) => {

@@ -1,3 +1,5 @@
+console.log('buildtime', process.env.BUILD_TYPE)
+
 const path = require('path')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 

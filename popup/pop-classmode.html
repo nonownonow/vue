@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html ng-app="inspinia">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <title page-title></title>
+  <script src="../index.js"></script>
+</head>
+
+<body>
+
+  <!-- 수업시작 팝업 버튼 -->
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#pop-mode-class">
+    수업시작 팝업
+  </button>
+
+  <!-- 수업시작 팝업 -->
+  <div class="modal fade got-style pop-mode-class" id="pop-mode-class" tabindex="-1" role="dialog" aria-labelledby="pop-mode-class"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-alert" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">수업 시작</h4>
+          <div class="area-img">
+            <div class="teacher-img">
+              <i class="profile-img">
+                <img src="../assets/stylesheets/theme/images/profile_small.jpg" alt="">
+              </i>
+            </div>
+          </div>
+          <!-- <button class="icon-bx-flat btn-close close" data-dismiss="modal" aria-label="Close"></button> -->
+        </div>
+        <div class="modal-body">
+          <div class="class-title">
+            <strong>[김윤아 Tutor] 패턴 영어로 문장 말하기</strong>
+            <span>3회차 20:00 ~ 20:45</span>
+          </div>
+          <table class="table">
+            <tbody>
+              <tr>
+                <th scope="row">오늘 배울 내용</th>
+                <td>
+                  2가지 패턴에 대해서 배울거에요!
+                  <br> 1. What supposed to ~
+                  <br> 2. It used to ~
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="modal-footer">
+          <a href="#" class="btn btn-mode-select">Face 모드로 수업시작</a>
+          <a href="#" class="btn btn-mode-select">Board 모드로 수업시작</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

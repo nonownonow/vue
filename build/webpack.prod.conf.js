@@ -4,7 +4,7 @@ const webpackBaseConfig = require('./webpack.base.conf')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const TerserJSPlugin = require('terser-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin')
+// const CopyWebpackPlugin = require('copy-webpack-plugin')
 // const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { styleLoaders, getAbsolutePathFromCwd, assetsPath } = require('./utils')
 
@@ -32,13 +32,13 @@ module.exports = merge(webpackBaseConfig, {
       chunkFilename: '[id].css',
       ignoreOrder: false // Enable to remove warnings about conflicting order
     }),
-    new CopyWebpackPlugin([
-      {
-        from: getAbsolutePathFromCwd('/static'),
-        to: 'static',
-        ignore: ['.*']
-      }
-    ]),
+    // new CopyWebpackPlugin([
+    //   {
+    //     from: getAbsolutePathFromCwd('/static'),
+    //     to: 'static',
+    //     ignore: ['.*']
+    //   }
+    // ]),
     // keep module.id stable when vendor modules does not change
     new webpack.HashedModuleIdsPlugin(),
     // enable scope hoisting

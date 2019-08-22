@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html ng-app="inspinia">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <title page-title></title>
+  <script src="../index.js"></script>
+</head>
+
+<body>
+
+  <!-- 수업종료 팝업(학생) -->
+  <!-- 수업종료 팝업(학생) 버튼 -->
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#pop-end-class">
+    수업종료 팝업(학생)
+  </button>
+
+  <!-- 떠나기 팝업(학생) 버튼 -->
+  <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#pop-quit-class">
+    떠나기 팝업(학생)
+  </button>
+
+  <!-- 수업종료 팝업(학생) -->
+  <div class="modal fade got-style pop-end-class" id="pop-end-class" tabindex="-1" role="dialog" aria-labelledby="pop-end-class"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-alert" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">수업 종료</h4>
+          <div class="area-img">
+            <div class="teacher-img">
+              <i class="profile-img">
+                <img src="../assets/stylesheets/theme/images/profile_small.jpg" alt="">
+              </i>
+            </div>
+          </div>
+          <!-- <button class="icon-bx-flat btn-close close" data-dismiss="modal" aria-label="Close"></button> -->
+        </div>
+        <div class="modal-body">
+          <div class="class-title">
+            <strong>[김윤아 Tutor] 패턴 영어로 문장 말하기</strong>
+            <span>3회차 20:00 ~ 20:45</span>
+          </div>
+          <table class="table">
+            <tbody>
+              <tr>
+                <th scope="row">오늘 배울 내용</th>
+                <td>
+                  2가지 패턴에 대해서 배울거에요!
+                  <br> 1. What supposed to ~
+                  <br> 2. It used to ~
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">다음 수업 회차</th>
+                <td>[4회차] 2018.03.09 (화) 20:00 ~ 20:45</td>
+              </tr>
+              <tr>
+                <th scope="row">오늘 최고의 학생</th>
+                <td>
+                  <ol>
+                    <li>
+                      <span class="rank fst">1</span>
+                      <div class="bx">
+                        <i class="profile-img">
+                          <img src="../assets/stylesheets/theme/images/profile_small.jpg" alt="">
+                        </i>
+                        <span class="name">이사라몬</span>
+                      </div>
+                    </li>
+                    <li>
+                      <span class="rank snd">2</span>
+                      <div class="bx">
+                        <i class="profile-img">
+                          <img src="../assets/stylesheets/theme/images/profile_small.jpg" alt="">
+                        </i>
+                        <span class="name">이사라몬</span>
+                      </div>
+                    </li>
+                    <li>
+                      <span class="rank thd">3</span>
+                      <div class="bx">
+                        <i class="profile-img">
+                          <img src="../assets/stylesheets/theme/images/profile_small.jpg" alt="">
+                        </i>
+                        <span class="name">이사라몬</span>
+                      </div>
+                    </li>
+                  </ol>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="popup-toast">
+          <p>3회차 수업 종료. 다음에 또 만나요!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 떠나기 팝업(학생) -->
+  <div class="modal fade got-style" id="pop-quit-class" tabindex="-1" role="dialog" aria-labelledby="pop-quit-class" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-alert" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="info">
+            <p>수업이 완전히 종료되었습니다.
+              <br>선생님이 교실을 떠났습니다.</p>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" data-dismiss="modal" class="btn cancel">나도 떠나기</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

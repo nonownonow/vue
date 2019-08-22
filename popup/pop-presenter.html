@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html ng-app="inspinia">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <title page-title></title>
+  <script src="../index.js"></script>
+</head>
+
+<body>
+
+  <!-- 발표자 선정 팝업 버튼 -->
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#pop-presenter">
+    발표자 선정 팝업
+  </button>
+
+  <!-- 발표자 선정 팝업 -->
+  <div class="modal fade got-style pop-presenter" id="pop-presenter" tabindex="-1" role="dialog" aria-labelledby="pop-presenter"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">발표자 선정</h4>
+          <button class="icon-bx-flat btn-close close" data-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <ul class="presenter-list">
+            <!-- NOTE : .area-profile에 클래스 active를 넣어주시면 보더가 생깁니다. -->
+            <li class="area-profile">
+              <img src="../assets/stylesheets/theme/images/profile_small.jpg" class="img-profile">
+              <strong class="name">김윤아 tutor</strong>
+            </li>
+            <li class="area-profile active">
+              <img src="../assets/stylesheets/theme/images/profile_small.jpg" class="img-profile">
+              <strong class="name">김윤아 tutor</strong>
+            </li>
+            <li class="area-profile">
+              <img src="../assets/stylesheets/theme/images/profile_small.jpg" class="img-profile">
+              <strong class="name">김윤아 tutor김윤아 tutor김윤아 tutor</strong>
+            </li>
+            <li class="area-profile">
+              <img src="../assets/stylesheets/theme/images/profile_small.jpg" class="img-profile">
+              <strong class="name">김윤아 tutor</strong>
+            </li>
+            <li class="area-profile">
+              <img src="../assets/stylesheets/theme/images/profile_small.jpg" class="img-profile">
+              <strong class="name">김윤아 tutor</strong>
+            </li>
+            <li class="area-profile">
+              <img src="../assets/stylesheets/theme/images/profile_small.jpg" class="img-profile">
+              <strong class="name">김윤아 tutor</strong>
+            </li>
+            <li class="area-profile active">
+              <img src="../assets/stylesheets/theme/images/profile_small.jpg" class="img-profile">
+              <strong class="name">김윤아 tutor</strong>
+            </li>
+            <li class="area-profile active">
+              <img src="../assets/stylesheets/theme/images/profile_small.jpg" class="img-profile">
+              <strong class="name">김윤아 tutor</strong>
+            </li>
+          </ul>
+          <p class="area-cmd text-center">
+            발표자로 선정하시겠습니까?
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" data-dismiss="modal" class="btn cancel">취소</button>
+          <button type="button" class="btn submit">확인</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

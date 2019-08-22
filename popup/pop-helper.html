@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html ng-app="inspinia">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <title page-title></title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+  <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <script src="../index.js"></script>
+</head>
+
+<body>
+
+  <!-- 도움말 팝업 버튼 -->
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#pop-helper">
+    도움말 팝업
+  </button>
+
+  <!-- 도움말 팝업 -->
+  <div class="modal fade got-style pop-helper" id="pop-helper" tabindex="-1" role="dialog" aria-labelledby="pop-helper" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">도움말</h4>
+          <button class="icon-bx-flat btn-close close" data-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>[단축키 정보]</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">연결 카메라 변경</th>
+                <td>Ctrl + Space Bar</td>
+              </tr>
+              <tr>
+                <th scope="row">영상 좌우반전</th>
+                <td>Ctrl + Shift + Z</td>
+              </tr>
+              <tr>
+                <th scope="row">영상 상하반전</th>
+                <td>Ctrl + Shift + X</td>
+              </tr>
+              <tr>
+                <th scope="row">보드모드 [캡쳐]</th>
+                <td>Alt + C</td>
+              </tr>
+              <tr>
+                <th scope="row">보드모드 [포인터]</th>
+                <td>Alt + 1</td>
+              </tr>
+              <tr>
+                <th scope="row">보드모드 [손바닥]</th>
+                <td>Alt + 2</td>
+              </tr>
+              <tr>
+                <th scope="row">보드모드 [그리기]</th>
+                <td>Alt + 3</td>
+              </tr>
+              <tr>
+                <th scope="row">보드모드 [지우개]</th>
+                <td>Alt + 4</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="btn-area">
+            <div class="btn-link">
+              <a href="#">이용법 보기 &gt;</a>
+            </div>
+            <div class="btn-link">
+              <a href="https://kr.tutor.com/help/faqs?q=player" target="_blank">더 많은 도움말 보기 &gt;</a>
+            </div>
+            <div class="btn-link">
+              <a href="https://goo.gl/xKQjuA" target="_blank">선생님: 학원공유 설치하기 &gt;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

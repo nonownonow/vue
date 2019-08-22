@@ -1,5 +1,5 @@
 // js import
-import '../assets/javascripts/pub.js'
+// import '../assets/javascripts/pub.js'
 
 // css import
 import '../node_modules/font-awesome/css/font-awesome.css'

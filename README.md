@@ -2,9 +2,6 @@
 
 webpack을 이용한 got-player
 
-## project pre setting
-1. nvm install
-1. yarn install
 
 ## project setting
 1. nvm use

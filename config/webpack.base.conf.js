@@ -1,4 +1,3 @@
-const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const DotenvWebpackPlugin = require('dotenv-webpack')
 const { assetsPath, getAbsolutePathFromCwd } = require('./utils')
 
@@ -14,10 +13,7 @@ module.exports = {
     tls: 'empty',
     child_process: 'empty'
   },
-  devtool: 'inline-source-map',
-  devServer: {
-    contentBase: getAbsolutePathFromCwd('dist')
-  },
+
   module: {
     rules: [
       {
@@ -56,7 +52,6 @@ module.exports = {
       {
         path: getAbsolutePathFromCwd('env/.env')
       }
-    ),
-    new CleanWebpackPlugin()
+    )
   ]
 }

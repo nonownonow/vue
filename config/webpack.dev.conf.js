@@ -5,21 +5,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const { styleLoaders, getAbsolutePathFromCwd } = require('./utils')
 
-let htmlTemplate
-switch (process.env.BUILD_TYPE) {
-  case 'player':
-    htmlTemplate = './page/got-player.html'
-    break
-  case 'setting':
-    htmlTemplate = './page/setting.html'
-    break
-  case 'popattend':
-    htmlTemplate = './popup/pop-attend.html'
-    break
-  default:
-    htmlTemplate = './index.html'
-}
-
 module.exports = merge(webpackBaseConfig, {
   mode: 'development',
   module: {
@@ -30,6 +15,7 @@ module.exports = merge(webpackBaseConfig, {
     clientLogLevel: 'warning',
     hot: true,
     contentBase: false, // since we use CopyWebpackPlugin.
+    // contentBase: getAbsolutePathFromCwd('dist')
     compress: true,
     overlay: { warnings: false, errors: true },
     publicPath: '/',
@@ -42,7 +28,7 @@ module.exports = merge(webpackBaseConfig, {
     new webpack.HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin(
       {
-        template: htmlTemplate
+        template: './index.html'
       }
     ),
     new CopyWebpackPlugin([

@@ -9,7 +9,7 @@ module.exports = {
   },
   testPathIgnorePatterns: [
     '/node_modules/',
-    '/feature/'
+    '/test/'
   ],
   collectCoverage: true,
   collectCoverageFrom: [

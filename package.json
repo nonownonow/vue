@@ -7,9 +7,10 @@
   "license": "MIT",
   "scripts": {
     "build": "dotenv -e env/prod.env -e env/.env -- node config/webpack-prod-builder",
-    "player": "BUILD_TYPE=player dotenv -e env/dev.env -e env/.env -- webpack-dev-server --open --config config/webpack.dev.conf.js",
-    "setting": "BUILD_TYPE=setting dotenv -e env/dev.env -e env/.env -- webpack-dev-server --open --config config/webpack.dev.conf.js",
-    "popattend": "BUILD_TYPE=popattend dotenv -e env/dev.env -e env/.env -- webpack-dev-server --open --config config/webpack.dev.conf.js"
+    "serve": "dotenv -e env/dev.env -e env/.env -- webpack-dev-server --open --config config/webpack.dev.conf.js",
+    "test": "yarn test:unit && yarn test:e2e",
+    "test:unit": "NODE_ENV=test jest",
+    "test:e2e": "NODE_ENV=test cucumber-js --require-module @babel/register --require features/step_definitions"
   },
   "dependencies": {
     "font-awesome": "^4.7.0",
@@ -18,6 +19,7 @@
   "devDependencies": {
     "@babel/core": "^7.5.5",
     "@babel/preset-env": "^7.5.5",
+    "@babel/register": "^7.5.5",
     "autoprefixer": "^9.6.1",
     "babel-eslint": "^10.0.2",
     "babel-jest": "^24.9.0",

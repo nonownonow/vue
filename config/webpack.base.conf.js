@@ -13,7 +13,12 @@ module.exports = {
     tls: 'empty',
     child_process: 'empty'
   },
-
+  resolve: {
+    extensions: ['.js', '.vue', '.json'],
+    alias: {
+      '@': getAbsolutePathFromCwd('src')
+    }
+  },
   module: {
     rules: [
       {
